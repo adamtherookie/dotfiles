@@ -2,4 +2,4 @@
 A dotfile repo
 
 # screenshots
-Coming soon
+See [my color sheme repo](https://github.com/aa2006/Warm-Brown/)
