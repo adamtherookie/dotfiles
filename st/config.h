@@ -20,7 +20,7 @@ static int borderpx = 2;
  * 4: value of shell in /etc/passwd
  * 5: value of shell in config.h
  */
-static char *shell = "/bin/zsh";
+static char *shell = "/bin/bash";
 char *utmp = NULL;
 /* scroll program: to enable use a string like "scroll" */
 char *scroll = "scroll";
@@ -100,11 +100,11 @@ unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-    "#1e222a", "#e06c75", "#98c379", "#e5c07b", "#61afef", "#c678dd", "#958a56",
+    "#1e222a", "#e06c75", "#68829e", "#e5c07b", "#61afef", "#c678dd", "#98c379",
     "#abb2bf",
 
     /* 8 bright colors */
-    "#636d83", "#e06c75", "#98c379", "#e5c07b", "#61afef", "#c678dd", "#958a56",
+    "#636d83", "#e06c75", "#68829e", "#e5c07b", "#61afef", "#c678dd", "#98c379",
     "#abb2bf",
 };
 

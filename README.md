@@ -2,4 +2,9 @@
 A dotfile repo
 
 # screenshots
-See [my color sheme repo](https://github.com/aa2006/Warm-Brown/)
+![screenshot1](./screenshot1.png)
+![screenshot2](./screenshot2.png)
+![screenshot3](./screenshot3.png)
+
+# wallpaper
+![wallpaper](./wallpaper.jpg)

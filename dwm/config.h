@@ -13,16 +13,16 @@ static const unsigned int borderpx = 2; /* border pixel of windows */
 static const unsigned int snap = 0;     /* snap pixel */
 static const int showbar = 1;           /* 0 means no bar */
 static const int topbar = 1;            /* 0 means bottom bar */
-static const char *fonts[] = {"Source Code Pro:size=10"};
+static const char *fonts[] = {"Source Code Pro Semibold:size=10"};
 static const char dmenufont[] = "Source Code Pro:size=10";
 static const char *colors[][3] = {
     /*               fg         bg         border   */
-    [SchemeNorm] = {"#dedede", "#041222", "#4f525c"},
-    [SchemeSel] = {"#dedede", "#041222", "#958a56"},
+    [SchemeNorm] = {"#dedede", "#1e222a", "#4f525c"},
+    [SchemeSel] = {"#dedede", "#1e222a", "#98c379"},
 };
 
 /* tagging */
-static const char *tags[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9"};
+static const char *tags[] = {"I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
 
 static const Rule rules[] = {
     /* xprop(1):
@@ -58,6 +58,10 @@ static char dmenumon[2] =
 static const char *dmenucmd[] = {"dmenu_run", "-m", dmenumon, NULL};
 static const char *termcmd[] = {"st", "bash", NULL};
 
+static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
+static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
+static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
+
 static Key keys[] = {
     /* modifier                     key        function        argument */
     TAGKEYS(XK_1, 0) TAGKEYS(XK_2, 1) TAGKEYS(XK_3, 2) TAGKEYS(XK_4, 3)
@@ -73,7 +77,7 @@ static Key keys[] = {
     {MODKEY, XK_t, setlayout, {.v = &layouts[0]}},
     {MODKEY, XK_space, setlayout, {0}},
     {MODKEY | ShiftMask, XK_space, togglefloating, {0}},
-    {MODKEY | ShiftMask, XK_k, focusstack, {.i = -1}}, 
+    {MODKEY | ShiftMask, XK_k, focusstack, {.i = -1}},
     {MODKEY|ControlMask, XK_j, setmfact, {.f = +0.01}},
     {MODKEY|ControlMask, XK_k, setmfact, {.f = -0.01}},
     {MODKEY, XK_j, pushdown, {0}},
@@ -87,6 +91,9 @@ static Key keys[] = {
     {MODKEY, XK_l, incrgaps, {.i = -1}},
     {MODKEY, XK_g, togglegaps, {0}},
     {MODKEY | ShiftMask, XK_g, defaultgaps, {0}},
+    {MODKEY, XK_F9, spawn, {.v = downvol}},
+  	{MODKEY, XK_F11,  spawn, {.v = mutevol}},
+  	{MODKEY, XK_F10, spawn, {.v = upvol}},
 };
 
 /* button definitions */
